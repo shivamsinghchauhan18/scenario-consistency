@@ -114,6 +114,9 @@ python3.11 -m venv .venv && .venv/bin/pip install scenic sentence-transformers p
 python3 audit/summarize.py                    # A: audit of the 40 released scenarios (stdlib only)
 .venv/bin/python mrt/run_retrieval.py         # B: metamorphic retrieval test (~2 min on CPU)
 .venv/bin/python mrt/minimal_pairs.py         # B: cosine of minimal pairs
+cp ../ChatScene/Scenic/tests/formats/opendrive/maps/CARLA/Town03.xodr execcheck/
 cd execcheck && ../.venv/bin/python build.py  # C: execute spawn snippets on Town03
 ```
 `tools/safe_pickle.py` reads ChatScene's database without unpickling it: it rebuilds the dicts, lists and strings from the opcode stream and refuses anything else, so no code from the file can run.
+
+`results/trace40.txt` quotes scenario descriptions and database descriptions from ChatScene (MIT licence, Zhang, Xu & Li); the ChatScene code itself is not included.
