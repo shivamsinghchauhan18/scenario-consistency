@@ -1,0 +1,5 @@
+scenic>=3.1
+sentence-transformers>=3.0
+torch
+numpy
+pytest

@@ -1,0 +1,86 @@
+[
+ {
+  "label": "left/right front, crossing",
+  "db": "spawn",
+  "i": 1,
+  "j": 2,
+  "cosine": 0.9852839708328247
+ },
+ {
+  "label": "bus stop right/left",
+  "db": "spawn",
+  "i": 6,
+  "j": 7,
+  "cosine": 0.996097207069397
+ },
+ {
+  "label": "vending machine right/left",
+  "db": "spawn",
+  "i": 8,
+  "j": 9,
+  "cosine": 0.9971106052398682
+ },
+ {
+  "label": "parked car right/left",
+  "db": "spawn",
+  "i": 10,
+  "j": 11,
+  "cosine": 0.9976205825805664
+ },
+ {
+  "label": "zebra right/left",
+  "db": "spawn",
+  "i": 12,
+  "j": 13,
+  "cosine": 0.9905027747154236
+ },
+ {
+  "label": "adjacent lane front/rear (right)",
+  "db": "spawn",
+  "i": 16,
+  "j": 19,
+  "cosine": 0.9711596369743347
+ },
+ {
+  "label": "adjacent lane right/left (front)",
+  "db": "spawn",
+  "i": 16,
+  "j": 17,
+  "cosine": 0.9822768568992615
+ },
+ {
+  "label": "intersection right/left side",
+  "db": "spawn",
+  "i": 25,
+  "j": 26,
+  "cosine": 0.9929142594337463
+ },
+ {
+  "label": "intersection turns left/right",
+  "db": "spawn",
+  "i": 28,
+  "j": 31,
+  "cosine": 0.9745486974716187
+ },
+ {
+  "label": "ego left/right turn (4-way)",
+  "db": "geometry",
+  "i": 2,
+  "j": 4,
+  "cosine": 0.9889994859695435
+ },
+ {
+  "label": "4-way/3-way junction",
+  "db": "geometry",
+  "i": 2,
+  "j": 3,
+  "cosine": 0.961818516254425
+ },
+ {
+  "label": "bus stop/parked car (right)",
+  "db": "spawn",
+  "i": 6,
+  "j": 10,
+  "cosine": 0.9498449563980103
+ }
+]

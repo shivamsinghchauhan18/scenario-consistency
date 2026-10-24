@@ -1,0 +1,993 @@
+{
+ "summary": {
+  "n": 40,
+  "fully_faithful": 3,
+  "with_severe_error": 25,
+  "with_only_added_or_partial": 12,
+  "scenarios_per_error_code": {
+   "ADDED": 26,
+   "SIDE": 13,
+   "PART": 7,
+   "CTX": 5,
+   "ACTOR": 4,
+   "TURN": 4,
+   "BEHAV": 4,
+   "MIX": 1,
+   "LONG": 1
+  },
+  "scenarios_with_error_per_component": {
+   "behavior": 11,
+   "geometry": 11,
+   "spawn": 33
+  },
+  "errors_by_stage": {
+   "retrieval": 66,
+   "llm_extraction": 0
+  },
+  "scenarios_using_defective_code": 4,
+  "error_instances": 66
+ },
+ "scenarios": [
+  {
+   "id": 0,
+   "scenario": "The ego vehicle is driving on a straight road when a pedestrian suddenly crosses from the right front and suddenly stops as the ego vehicle approaches.",
+   "retrieved": {
+    "B": 0,
+    "G": 12,
+    "S": 2
+   },
+   "errors": [
+    [
+     "G",
+     "ADDED",
+     "R",
+     "straight road -> four-way intersection (no plain straight-road geometry in DB)"
+    ]
+   ],
+   "code_defects": [
+    "spawn 2"
+   ],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 1,
+   "scenario": "The ego vehicle is driving on a straight road; the adversarial pedestrian stands behind a bus stop on the right front, then suddenly sprints out onto the road in front of the ego vehicle and stops.",
+   "retrieved": {
+    "B": 0,
+    "G": 12,
+    "S": 7
+   },
+   "errors": [
+    [
+     "G",
+     "ADDED",
+     "R",
+     "straight road -> four-way intersection"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "bus stop on the right front -> left front"
+    ]
+   ],
+   "code_defects": [
+    "spawn 7"
+   ],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 2,
+   "scenario": "The ego vehicle is driving on a straight road; the adversarial pedestrian is hidden behind a vending machine on the right front, and abruptly dashes out onto the road, and stops directly in the path of the ego.",
+   "retrieved": {
+    "B": 0,
+    "G": 12,
+    "S": 9
+   },
+   "errors": [
+    [
+     "G",
+     "ADDED",
+     "R",
+     "straight road -> four-way intersection"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "vending machine on the right front -> left front"
+    ]
+   ],
+   "code_defects": [
+    "spawn 9"
+   ],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 3,
+   "scenario": "The ego vehicle is driving on a straight road; the adversarial pedestrian appears from a driveway on the left and suddenly stop and walk diagonally.",
+   "retrieved": {
+    "B": 4,
+    "G": 12,
+    "S": 21
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "stop then walk diagonally -> stop then resume walking (diagonal entry B2 exists)"
+    ],
+    [
+     "G",
+     "ADDED",
+     "R",
+     "straight road -> four-way intersection"
+    ],
+    [
+     "S",
+     "ACTOR",
+     "R",
+     "pedestrian from a driveway -> vehicle in adjacent lane"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 4,
+   "scenario": "The ego vehicle is driving on a straight road; the adversarial pedestrian suddenly appears from behind a parked car on the right front and suddenly stop.",
+   "retrieved": {
+    "B": 0,
+    "G": 12,
+    "S": 11
+   },
+   "errors": [
+    [
+     "G",
+     "ADDED",
+     "R",
+     "straight road -> four-way intersection"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "parked car on the right front -> left front"
+    ]
+   ],
+   "code_defects": [
+    "spawn 11"
+   ],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 5,
+   "scenario": "The ego vehicle is turning left at an intersection; the adversarial motorcyclist on the right front pretends to cross the road but brakes abruptly at the edge of the road, causing confusion.",
+   "retrieved": {
+    "B": 12,
+    "G": 1,
+    "S": 20
+   },
+   "errors": [
+    [
+     "G",
+     "TURN",
+     "R",
+     "ego turning left -> right turn"
+    ],
+    [
+     "S",
+     "ACTOR",
+     "R",
+     "motorcyclist at road edge -> vehicle in adjacent lane"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 6,
+   "scenario": "The ego vehicle is turning left at an intersection; the adversarial pedestrian on the opposite sidewalk suddenly crosses the road from the right front and stops in the middle of the intersection.",
+   "retrieved": {
+    "B": 0,
+    "G": 1,
+    "S": 22
+   },
+   "errors": [
+    [
+     "G",
+     "TURN",
+     "R",
+     "ego turning left -> right turn"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 7,
+   "scenario": "The ego vehicle is turning right at an intersection; the adversarial motorcyclist on the opposite sidewalk abruptly crosses the road from the right front and comes to a halt in the center of the intersection.",
+   "retrieved": {
+    "B": 13,
+    "G": 1,
+    "S": 22
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 8,
+   "scenario": "The ego vehicle is turning right at an intersection; the adversarial pedestrian on the left front suddenly crosses the road and stops in the middle of the intersection, blocking the ego vehicle's path.",
+   "retrieved": {
+    "B": 0,
+    "G": 1,
+    "S": 30
+   },
+   "errors": [
+    [
+     "S",
+     "SIDE",
+     "R",
+     "left front -> oncoming side"
+    ],
+    [
+     "S",
+     "ACTOR",
+     "R",
+     "pedestrian -> vehicle turning left at intersection"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 9,
+   "scenario": "The ego vehicle is turning left at an intersection; the adversarial cyclist on the left front suddenly stops in the middle of the intersection and dismounts, obstructing the ego vehicle's path.",
+   "retrieved": {
+    "B": 13,
+    "G": 1,
+    "S": 30
+   },
+   "errors": [
+    [
+     "G",
+     "TURN",
+     "R",
+     "ego turning left -> right turn"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "left front -> oncoming side"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 10,
+   "scenario": "The ego vehicle is attempting to change lanes to avoid a slow-moving leading vehicle; the adversarial car in the target lane suddenly merges into the ego vehicle's original lane, blocking the ego vehicle from returning to its initial position.",
+   "retrieved": {
+    "B": 20,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [
+    [
+     "G",
+     "CTX",
+     "R",
+     "same-direction lane change -> opposite-direction two-lane road"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "car in target lane -> oncoming lane"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 11,
+   "scenario": "The ego vehicle is changing to the right lane; the adversarial car is driving parallel to the ego and blocking its path.",
+   "retrieved": {
+    "B": 23,
+    "G": 6,
+    "S": 20
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 12,
+   "scenario": "The ego vehicle is attempting to change lanes to avoid a slow-moving leading vehicle; the adversarial car in the target lane suddenly slows down, matching the speed of the leading vehicle, and effectively blocking the ego vehicle from completing the lane change.",
+   "retrieved": {
+    "B": 30,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [
+    [
+     "G",
+     "CTX",
+     "R",
+     "same-direction lane change -> opposite-direction two-lane road"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "car in target lane -> oncoming lane"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 13,
+   "scenario": "The ego vehicle is performing a lane change to evade a slow-moving vehicle; the adversarial car in the target lane on the right front suddenly brakes, causing the ego vehicle to react quickly to avoid a collision.",
+   "retrieved": {
+    "B": 24,
+    "G": 6,
+    "S": 20
+   },
+   "errors": [],
+   "code_defects": [],
+   "faithful": true,
+   "severe": false
+  },
+  {
+   "id": 14,
+   "scenario": "The ego vehicle is preparing to change lanes to evade a slow-moving leading vehicle; the adversarial car in the target lane starts weaving between lanes, making it difficult for the ego vehicle to predict its position and safely execute the lane change.",
+   "retrieved": {
+    "B": 22,
+    "G": 6,
+    "S": 21
+   },
+   "errors": [
+    [
+     "S",
+     "MIX",
+     "R",
+     "geometry G6 guarantees a right lane, spawn S21 uses the left lane"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 15,
+   "scenario": "The ego approaches a parked car that is blocking its lane and must use the opposite lane to bypass the vehicle, cautiously monitoring oncoming traffic, and suddenly encounters a jaywalking pedestrian, requiring the ego to quickly assess the situation and respond appropriately to avoid a collision.",
+   "retrieved": {
+    "B": 0,
+    "G": 10,
+    "S": 22
+   },
+   "errors": [],
+   "code_defects": [],
+   "faithful": true,
+   "severe": false
+  },
+  {
+   "id": 16,
+   "scenario": "The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle, carefully assessing the situation and yielding to oncoming traffic, when an oncoming motorcyclist swerves into the lane unexpectedly, necessitating the ego to brake or maneuver to avoid a potential accident.",
+   "retrieved": {
+    "B": 31,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "swerves into the lane -> drives in the oncoming lane (swerve dropped)"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 17,
+   "scenario": "The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle when an oncoming pedestrian enters the lane without warning and suddenly stop, necessitating the ego to brake sharply or steer to avoid hitting the pedestrian.",
+   "retrieved": {
+    "B": 4,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "enters and stops -> stops then resumes walking"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 18,
+   "scenario": "The ego approaches a parked car obstructing its lane and must use the opposite lane to go around when an oncoming car suddenly turns into the ego's path without signaling, requiring the ego to react quickly and take evasive action to prevent a collision.",
+   "retrieved": {
+    "B": 44,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [
+    [
+     "B",
+     "BEHAV",
+     "R",
+     "oncoming car turns into ego path -> crosses intersection and accelerates"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 19,
+   "scenario": "The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle when an oncoming car suddenly accelerates, closing the gap for the ego to safely return to its lane, necessitating the ego to quickly decide whether to accelerate or brake to avoid a collision.",
+   "retrieved": {
+    "B": 33,
+    "G": 10,
+    "S": 24
+   },
+   "errors": [],
+   "code_defects": [],
+   "faithful": true,
+   "severe": false
+  },
+  {
+   "id": 20,
+   "scenario": "The ego is driving straight through an intersection when a crossing vehicle runs the red light and unexpectedly accelerates, forcing the ego to quickly reassess the situation and perform a collision avoidance maneuver.",
+   "retrieved": {
+    "B": 54,
+    "G": 11,
+    "S": 22
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "accelerates -> accelerates then decelerates"
+    ],
+    [
+     "S",
+     "ACTOR",
+     "R",
+     "crossing vehicle at intersection -> road-crossing pattern next to a parked car"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 21,
+   "scenario": "The ego vehicle is moving straight through the intersection; the adversarial agent, initially on the left front, runs the red light and makes an abrupt right turn, forcing the ego vehicle to perform a collision avoidance maneuver.",
+   "retrieved": {
+    "B": 41,
+    "G": 11,
+    "S": 21
+   },
+   "errors": [
+    [
+     "S",
+     "CTX",
+     "R",
+     "red-light runner at intersection -> adjacent-lane spawn"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 22,
+   "scenario": "The ego vehicle is going straight through the intersection; the adversarial vehicle approaches from the left front and cuts off the ego vehicle.",
+   "retrieved": {
+    "B": 34,
+    "G": 12,
+    "S": 21
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 23,
+   "scenario": "The ego vehicle is moving straight through the intersection; the adversarial agent, initially on the left front, runs the red light and makes an abrupt left turn, forcing the ego vehicle to perform a collision avoidance maneuver.",
+   "retrieved": {
+    "B": 48,
+    "G": 11,
+    "S": 21
+   },
+   "errors": [
+    [
+     "S",
+     "CTX",
+     "R",
+     "red-light runner at intersection -> adjacent-lane spawn"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 24,
+   "scenario": "The ego moves straight at an intersection when a crossing vehicle runs the red light from right and brakes abruptly, causing the ego to rapidly adapt its trajectory and perform a collision avoidance maneuver.",
+   "retrieved": {
+    "B": 25,
+    "G": 11,
+    "S": 33
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "brakes abruptly -> brakes then accelerates aggressively"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "from the right -> oncoming side"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 25,
+   "scenario": "The ego starts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car's throttle malfunctions, leading to an unexpected acceleration and forcing the ego to quickly modify its turning path to avoid a collision.",
+   "retrieved": {
+    "B": 36,
+    "G": 13,
+    "S": 21
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "unexpected acceleration -> alternating acceleration/deceleration"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "oncoming car -> left-front adjacent lane"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 26,
+   "scenario": "The ego attempts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car's suddenly brakes, necessitating the ego to rapidly reassess the situation and adjust its turn.",
+   "retrieved": {
+    "B": 25,
+    "G": 13,
+    "S": 24
+   },
+   "errors": [
+    [
+     "B",
+     "PART",
+     "R",
+     "brakes -> brakes then accelerates aggressively"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 27,
+   "scenario": "The ego commences an unprotected left turn at an intersection while yielding to an oncoming car when the adversarial car, comes from the right, blocks multiple lanes by driving extremely slowly, forcing the ego vehicle to change lanes.",
+   "retrieved": {
+    "B": 51,
+    "G": 13,
+    "S": 33
+   },
+   "errors": [
+    [
+     "S",
+     "SIDE",
+     "R",
+     "from the right -> oncoming side"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 28,
+   "scenario": "The ego vehicle is making an unprotected left turn; the adversarial vehicle approaches the intersection at a normal speed but then suddenly attempts to make a last-second right turn.",
+   "retrieved": {
+    "B": 47,
+    "G": 13,
+    "S": 24
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 29,
+   "scenario": "The ego attempts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car veer erratically.",
+   "retrieved": {
+    "B": 26,
+    "G": 13,
+    "S": 24
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 30,
+   "scenario": "The ego is performing a right turn at an intersection when the crossing car suddenly speeds up, entering the intersection and causing the ego to brake abruptly to avoid a collision.",
+   "retrieved": {
+    "B": 44,
+    "G": 4,
+    "S": 30
+   },
+   "errors": [
+    [
+     "S",
+     "SIDE",
+     "R",
+     "crossing from the left -> oncoming side"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 31,
+   "scenario": "The ego vehicle is turning right; the adversarial car (positioned ahead on the right) blocks the lane by braking suddenly.",
+   "retrieved": {
+    "B": 24,
+    "G": 1,
+    "S": 20
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 32,
+   "scenario": "The ego vehicle is turning right; the adversarial vehicle enters the intersection from the left side, swerving to the right suddenly.",
+   "retrieved": {
+    "B": 47,
+    "G": 1,
+    "S": 30
+   },
+   "errors": [
+    [
+     "S",
+     "SIDE",
+     "R",
+     "enters from the left -> oncoming side"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 33,
+   "scenario": "The ego vehicle is turning right; the adversarial car (positioned ahead on the right) reverses abruptly.",
+   "retrieved": {
+    "B": 21,
+    "G": 1,
+    "S": 20
+   },
+   "errors": [
+    [
+     "B",
+     "BEHAV",
+     "R",
+     "reverses abruptly -> stops after a lane change (reversal entry B53 exists)"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 34,
+   "scenario": "The ego vehicle is turning right; the adversarial car (positioned behind on the right) suddenly accelerates and then decelerates.",
+   "retrieved": {
+    "B": 36,
+    "G": 1,
+    "S": 20
+   },
+   "errors": [
+    [
+     "S",
+     "LONG",
+     "R",
+     "behind on the right -> right front"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 35,
+   "scenario": "The ego vehicle is approaching the intersection; the adversarial car (on the left) suddenly accelerates and enters the intersection first and suddenly stop.",
+   "retrieved": {
+    "B": 54,
+    "G": 2,
+    "S": 21
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 36,
+   "scenario": "The ego vehicle is approaching the intersection; the adversarial car (on the right) suddenly accelerates and enters the intersection first and suddenly stop.",
+   "retrieved": {
+    "B": 54,
+    "G": 2,
+    "S": 20
+   },
+   "errors": [
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": false
+  },
+  {
+   "id": 37,
+   "scenario": "The ego vehicle is maintaining a constant speed; the adversarial car, comes from the right, blocks multiple lanes by driving extremely slowly, forcing the ego vehicle to change lanes.",
+   "retrieved": {
+    "B": 51,
+    "G": 10,
+    "S": 20
+   },
+   "errors": [
+    [
+     "G",
+     "CTX",
+     "R",
+     "multi-lane road -> opposite-direction two-lane road"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "slow leading car added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 38,
+   "scenario": "The ego vehicle is entering the intersection; the adversarial vehicle comes from the opposite direction and turns left and stop, causing a near collision with the ego vehicle.",
+   "retrieved": {
+    "B": 36,
+    "G": 2,
+    "S": 24
+   },
+   "errors": [
+    [
+     "B",
+     "BEHAV",
+     "R",
+     "turns left and stops -> alternating acceleration (left-turn-and-stop entry B48 exists)"
+    ],
+    [
+     "S",
+     "ADDED",
+     "R",
+     "parked car blocking ego lane added"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  },
+  {
+   "id": 39,
+   "scenario": "The ego vehicle is entering the intersection; the adversarial vehicle comes from the right and turns left and stop, causing a near collision with the ego vehicle.",
+   "retrieved": {
+    "B": 36,
+    "G": 1,
+    "S": 33
+   },
+   "errors": [
+    [
+     "B",
+     "BEHAV",
+     "R",
+     "turns left and stops -> alternating acceleration (B48 exists)"
+    ],
+    [
+     "S",
+     "SIDE",
+     "R",
+     "from the right -> oncoming side"
+    ],
+    [
+     "S",
+     "TURN",
+     "R",
+     "turns left -> turns right"
+    ]
+   ],
+   "code_defects": [],
+   "faithful": false,
+   "severe": true
+  }
+ ]
+}

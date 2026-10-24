@@ -1,0 +1,350 @@
+## 0 [Pedestrian] The ego vehicle is driving on a straight road when a pedestrian suddenly crosses from the right front and suddenly stops as the ego vehicle approaches.
+   LLM-B: The adversarial pedestrian suddenly crosses from the right front and stops abruptly as the ego vehicle approaches.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: A straight road.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial agent is on the right front of the ego vehicle on the same straight road for crossing.
+      -> S2: Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.
+   !! G ADDED (retrieval): straight road -> four-way intersection (no plain straight-road geometry in DB)
+   !! code defect in retrieved spawn 2: described right front; heading -90 makes the crossing agent face away from the road
+## 1 [Pedestrian] The ego vehicle is driving on a straight road; the adversarial pedestrian stands behind a bus stop on the right front, then suddenly sprints out onto the road in front of the ego vehicle and stops.
+   LLM-B: The adversarial pedestrian suddenly sprints out onto the road in front of the ego vehicle and stops.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: A straight road.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial agent stands behind a bus stop on the right front of the ego vehicle on the same straight road.
+      -> S7: Adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on the same straight road for crossing.
+   !! G ADDED (retrieval): straight road -> four-way intersection
+   !! S SIDE (retrieval): bus stop on the right front -> left front
+   !! code defect in retrieved spawn 7: described left front; blocker placed on the right, agent faces right
+## 2 [Pedestrian] The ego vehicle is driving on a straight road; the adversarial pedestrian is hidden behind a vending machine on the right front, and abruptly dashes out onto the road, and stops directly in the path of the ego.
+   LLM-B: The adversarial pedestrian abruptly dashes out onto the road and stops directly in the path of the ego vehicle.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: A straight road.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial agent is hidden behind a vending machine on the right front of the ego vehicle on the same straight road.
+      -> S9: Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.
+   !! G ADDED (retrieval): straight road -> four-way intersection
+   !! S SIDE (retrieval): vending machine on the right front -> left front
+   !! code defect in retrieved spawn 9: described left front; blocker placed on the right, agent faces right
+## 3 [Pedestrian] The ego vehicle is driving on a straight road; the adversarial pedestrian appears from a driveway on the left and suddenly stop and walk diagonally.
+   LLM-B: The adversarial pedestrian appears from a driveway on the left, suddenly stops, and then walks diagonally.
+      -> B4: The adversarial pedestrian starts walking towards the road when the ego vehicle is close, suddenly stops mid-way, and then resumes walking.
+   LLM-G: A straight road.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial agent emerges from a driveway on the left side of the ego vehicle.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! B PART (retrieval): stop then walk diagonally -> stop then resume walking (diagonal entry B2 exists)
+   !! G ADDED (retrieval): straight road -> four-way intersection
+   !! S ACTOR (retrieval): pedestrian from a driveway -> vehicle in adjacent lane
+   !! S ADDED (retrieval): slow leading car added
+## 4 [Pedestrian] The ego vehicle is driving on a straight road; the adversarial pedestrian suddenly appears from behind a parked car on the right front and suddenly stop.
+   LLM-B: The adversarial pedestrian suddenly appears from behind a parked car and stops abruptly.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: A straight road.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial agent emerges from behind a parked car on the right front of the ego vehicle on the same straight road.
+      -> S11: Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.
+   !! G ADDED (retrieval): straight road -> four-way intersection
+   !! S SIDE (retrieval): parked car on the right front -> left front
+   !! code defect in retrieved spawn 11: described left front; blocker placed on the right, agent faces right
+## 5 [Motorcycle] The ego vehicle is turning left at an intersection; the adversarial motorcyclist on the right front pretends to cross the road but brakes abruptly at the edge of the road, causing confusion.
+   LLM-B: The adversarial motorcyclist pretends to cross the road but brakes abruptly at the edge of the road, causing confusion.
+      -> B12: The adversarial cyclist is crossing the road but brakes abruptly
+   LLM-G: The ego vehicle is turning left at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial motorcyclist is on the right front of the ego vehicle at the edge of the road.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! G TURN (retrieval): ego turning left -> right turn
+   !! S ACTOR (retrieval): motorcyclist at road edge -> vehicle in adjacent lane
+   !! S ADDED (retrieval): slow leading car added
+## 6 [Pedestrian] The ego vehicle is turning left at an intersection; the adversarial pedestrian on the opposite sidewalk suddenly crosses the road from the right front and stops in the middle of the intersection.
+   LLM-B: The adversarial pedestrian suddenly crosses the road and stops in the middle of the intersection.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: The ego vehicle is turning left at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial pedestrian is on the opposite sidewalk, crossing from the right front of the ego vehicle.
+      -> S22: Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.
+   !! G TURN (retrieval): ego turning left -> right turn
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 7 [Motorcycle] The ego vehicle is turning right at an intersection; the adversarial motorcyclist on the opposite sidewalk abruptly crosses the road from the right front and comes to a halt in the center of the intersection.
+   LLM-B: The adversarial motorcyclist abruptly crosses the road and comes to a halt in the center of the intersection.
+      -> B13: The adversarial motorcyclist is crossing the road suddenly stops in the middle of the intersection
+   LLM-G: The ego vehicle is turning right at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial motorcyclist is on the opposite sidewalk, crossing from the right front of the ego vehicle.
+      -> S22: Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 8 [Pedestrian] The ego vehicle is turning right at an intersection; the adversarial pedestrian on the left front suddenly crosses the road and stops in the middle of the intersection, blocking the ego vehicle's path.
+   LLM-B: The adversarial pedestrian suddenly crosses the road and stops in the middle of the intersection, blocking the ego vehicle's path.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: The ego vehicle is turning right at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial pedestrian is on the left front of the ego vehicle at the intersection.
+      -> S30: The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.
+   !! S SIDE (retrieval): left front -> oncoming side
+   !! S ACTOR (retrieval): pedestrian -> vehicle turning left at intersection
+## 9 [Bicycle] The ego vehicle is turning left at an intersection; the adversarial cyclist on the left front suddenly stops in the middle of the intersection and dismounts, obstructing the ego vehicle's path.
+   LLM-B: The adversarial cyclist suddenly stops in the middle of the intersection and dismounts, obstructing the ego vehicle's path.
+      -> B13: The adversarial motorcyclist is crossing the road suddenly stops in the middle of the intersection
+   LLM-G: The ego vehicle is turning left at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial cyclist is on the left front of the ego vehicle in the middle of the intersection.
+      -> S30: The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.
+   !! G TURN (retrieval): ego turning left -> right turn
+   !! S SIDE (retrieval): left front -> oncoming side
+## 10 [Car] The ego vehicle is attempting to change lanes to avoid a slow-moving leading vehicle; the adversarial car in the target lane suddenly merges into the ego vehicle's original lane, blocking the ego vehicle from returning to its initial position.
+   LLM-B: The adversarial car suddenly merges into the ego vehicle's original lane, blocking the ego vehicle from returning to its initial position.
+      -> B20: The adversarial car in the target lane suddenly merges into the ego vehicle's original lane.
+   LLM-G: The ego vehicle is on a multi-lane road attempting to change lanes.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial car is in the target lane to the side of the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! G CTX (retrieval): same-direction lane change -> opposite-direction two-lane road
+   !! S SIDE (retrieval): car in target lane -> oncoming lane
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 11 [Car] The ego vehicle is changing to the right lane; the adversarial car is driving parallel to the ego and blocking its path.
+   LLM-B: The adversarial car is driving parallel to the ego vehicle and blocking its path.
+      -> B23: The adversarial vehicle is strategically positioned to drive parallel in the right lane next to the ego vehicle with the same speed
+   LLM-G: The ego vehicle is placed in a straight lane that includes a right lane.
+      -> G6: The ego vehicle is positioned in a lane with a right lane moving in the same direction.
+   LLM-S: The adversarial car is parallel to the ego vehicle on the right side.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! S ADDED (retrieval): slow leading car added
+## 12 [Car] The ego vehicle is attempting to change lanes to avoid a slow-moving leading vehicle; the adversarial car in the target lane suddenly slows down, matching the speed of the leading vehicle, and effectively blocking the ego vehicle from completing the lane change.
+   LLM-B: The adversarial car suddenly slows down to match the speed of the leading vehicle, blocking the ego vehicle from completing the lane change.
+      -> B30: The adversarial vehicle in the target lane suddenly slows down to match the speed of a slow-moving leading vehicle.
+   LLM-G: The ego vehicle is on a multi-lane road attempting a lane change.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial car is in the target lane, parallel to the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! G CTX (retrieval): same-direction lane change -> opposite-direction two-lane road
+   !! S SIDE (retrieval): car in target lane -> oncoming lane
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 13 [Car] The ego vehicle is performing a lane change to evade a slow-moving vehicle; the adversarial car in the target lane on the right front suddenly brakes, causing the ego vehicle to react quickly to avoid a collision.
+   LLM-B: The adversarial car in the target lane suddenly brakes.
+      -> B24: The adversarial vehicle initially follows the lane at a set speed and then suddenly brakes.
+   LLM-G: The ego vehicle is on a straight road, performing a lane change.
+      -> G6: The ego vehicle is positioned in a lane with a right lane moving in the same direction.
+   LLM-S: The adversarial car is in the target lane on the right front of the ego vehicle.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+## 14 [Car] The ego vehicle is preparing to change lanes to evade a slow-moving leading vehicle; the adversarial car in the target lane starts weaving between lanes, making it difficult for the ego vehicle to predict its position and safely execute the lane change.
+   LLM-B: The adversarial car starts weaving between lanes, making it difficult for the ego vehicle to predict its position.
+      -> B22: The adversarial vehicle performs erratic weaving between lanes.
+   LLM-G: The ego vehicle is on a multi-lane road, preparing to change lanes.
+      -> G6: The ego vehicle is positioned in a lane with a right lane moving in the same direction.
+   LLM-S: The adversarial car is in the target lane of the ego vehicle, moving unpredictably.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! S MIX (retrieval): geometry G6 guarantees a right lane, spawn S21 uses the left lane
+## 15 [Pedestrian] The ego approaches a parked car that is blocking its lane and must use the opposite lane to bypass the vehicle, cautiously monitoring oncoming traffic, and suddenly encounters a jaywalking pedestrian, requiring the ego to quickly assess the situation and respond appropriately to avoid a collision.
+   LLM-B: The adversarial pedestrian suddenly jaywalks in front of the ego vehicle.
+      -> B0: The adversarial pedestrian suddenly crosses the road and suddenly stops in front of the ego vehicle.
+   LLM-G: A two-lane road with traffic flowing in opposite directions, where the ego vehicle must bypass a parked car blocking its lane.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial pedestrian appears from the side of the road, crossing the path of the ego vehicle as it uses the opposite lane to bypass the parked car.
+      -> S22: Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.
+## 16 [Motorcycle] The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle, carefully assessing the situation and yielding to oncoming traffic, when an oncoming motorcyclist swerves into the lane unexpectedly, necessitating the ego to brake or maneuver to avoid a potential accident.
+   LLM-B: The adversarial motorcyclist swerves into the lane unexpectedly.
+      -> B31: The adversarial cyclist or motorcycle driver comes from the nearby opposite oncoming lane.
+   LLM-G: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial motorcyclist comes from the near opposite oncoming lane, with a parked car blocking the ego vehicle's lane.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! B PART (retrieval): swerves into the lane -> drives in the oncoming lane (swerve dropped)
+## 17 [Pedestrian] The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle when an oncoming pedestrian enters the lane without warning and suddenly stop, necessitating the ego to brake sharply or steer to avoid hitting the pedestrian.
+   LLM-B: The adversarial pedestrian enters the lane without warning and suddenly stops.
+      -> B4: The adversarial pedestrian starts walking towards the road when the ego vehicle is close, suddenly stops mid-way, and then resumes walking.
+   LLM-G: The ego vehicle is on a two-lane road with traffic flowing in opposite directions, with a parked car blocking its lane.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial pedestrian enters from the opposite lane, directly in front of the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! B PART (retrieval): enters and stops -> stops then resumes walking
+## 18 [Car] The ego approaches a parked car obstructing its lane and must use the opposite lane to go around when an oncoming car suddenly turns into the ego's path without signaling, requiring the ego to react quickly and take evasive action to prevent a collision.
+   LLM-B: The adversarial car suddenly turns into the ego's path without signaling.
+      -> B44: The adversarial vehicle crosses the intersection, and abruptly accelerates as it approaches the ego's trajectory.
+   LLM-G: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial car comes from the near opposite oncoming lane, with a parked car blocking the ego vehicle's lane.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! B BEHAV (retrieval): oncoming car turns into ego path -> crosses intersection and accelerates
+## 19 [Car] The ego encounters a parked car blocking its lane and must use the opposite lane to bypass the vehicle when an oncoming car suddenly accelerates, closing the gap for the ego to safely return to its lane, necessitating the ego to quickly decide whether to accelerate or brake to avoid a collision.
+   LLM-B: The adversarial car suddenly accelerates, closing the gap for the ego vehicle to safely return to its lane.
+      -> B33: The adversarial car suddenly accelerates as it nears the ego vehicle.
+   LLM-G: The ego vehicle is on a two-lane road with traffic flowing in opposite directions, with a parked car blocking its lane.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial car is approaching from the opposite lane, heading towards the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+## 20 [Car] The ego is driving straight through an intersection when a crossing vehicle runs the red light and unexpectedly accelerates, forcing the ego to quickly reassess the situation and perform a collision avoidance maneuver.
+   LLM-B: The adversarial car runs the red light and unexpectedly accelerates.
+      -> B54: The adversarial vehicle approaches the intersection normally but suddenly accelerates and then abruptly decelerates
+   LLM-G: The ego vehicle is driving straight through a four-way signalized intersection; the light is red for the adversarial agent.
+      -> G11: The ego vehicle drives straight across a four-way signalized intersection, the light is red for adversarial agent.
+   LLM-S: The adversarial car is crossing the intersection from the side.
+      -> S22: Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.
+   !! B PART (retrieval): accelerates -> accelerates then decelerates
+   !! S ACTOR (retrieval): crossing vehicle at intersection -> road-crossing pattern next to a parked car
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 21 [Car] The ego vehicle is moving straight through the intersection; the adversarial agent, initially on the left front, runs the red light and makes an abrupt right turn, forcing the ego vehicle to perform a collision avoidance maneuver.
+   LLM-B: The adversarial car runs the red light and makes an abrupt right turn, forcing the ego vehicle to perform a collision avoidance maneuver.
+      -> B41: The adversarial vehicle crosses the intersection and makes an abrupt right turn as it approaches the ego's trajectory.
+   LLM-G: The ego vehicle is moving straight through a four-way signalized intersection; the light is red for the adversarial agent.
+      -> G11: The ego vehicle drives straight across a four-way signalized intersection, the light is red for adversarial agent.
+   LLM-S: The adversarial car is initially on the left front of the ego vehicle.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! S CTX (retrieval): red-light runner at intersection -> adjacent-lane spawn
+   !! S ADDED (retrieval): slow leading car added
+## 22 [Car] The ego vehicle is going straight through the intersection; the adversarial vehicle approaches from the left front and cuts off the ego vehicle.
+   LLM-B: The adversarial car approaches from the left front and cuts off the ego vehicle.
+      -> B34: The adversarial car suddenly changes to ego's lanes as it nears the ego vehicle.
+   LLM-G: The ego vehicle is driving straight through an intersection.
+      -> G12: The ego vehicle drives straight across a four-way unsignalized intersection.
+   LLM-S: The adversarial car approaches from the left front of the ego vehicle at the intersection.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! S ADDED (retrieval): slow leading car added
+## 23 [Car] The ego vehicle is moving straight through the intersection; the adversarial agent, initially on the left front, runs the red light and makes an abrupt left turn, forcing the ego vehicle to perform a collision avoidance maneuver.
+   LLM-B: The adversarial car runs the red light and makes an abrupt left turn, forcing the ego vehicle to perform a collision avoidance maneuver.
+      -> B48: The adversarial vehicle approaches the intersection at normal speed, suddenly makes a calculated left turn and then stop.
+   LLM-G: The ego vehicle is moving straight through a four-way signalized intersection; the light is red for the adversarial agent.
+      -> G11: The ego vehicle drives straight across a four-way signalized intersection, the light is red for adversarial agent.
+   LLM-S: The adversarial car is initially on the left front of the ego vehicle.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! S CTX (retrieval): red-light runner at intersection -> adjacent-lane spawn
+   !! S ADDED (retrieval): slow leading car added
+## 24 [Car] The ego moves straight at an intersection when a crossing vehicle runs the red light from right and brakes abruptly, causing the ego to rapidly adapt its trajectory and perform a collision avoidance maneuver.
+   LLM-B: The adversarial car runs the red light from the right and brakes abruptly.
+      -> B25: The adversarial vehicle brakes suddenly and, after a brief pause, accelerates aggressively.
+   LLM-G: The ego vehicle moves straight across a four-way signalized intersection; the light is red for the adversarial agent.
+      -> G11: The ego vehicle drives straight across a four-way signalized intersection, the light is red for adversarial agent.
+   LLM-S: The adversarial car is crossing the intersection from the right.
+      -> S33: The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.
+   !! B PART (retrieval): brakes abruptly -> brakes then accelerates aggressively
+   !! S SIDE (retrieval): from the right -> oncoming side
+## 25 [Car] The ego starts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car's throttle malfunctions, leading to an unexpected acceleration and forcing the ego to quickly modify its turning path to avoid a collision.
+   LLM-B: The adversarial car experiences a throttle malfunction, leading to unexpected acceleration.
+      -> B36: The adversarial car suddenly alternates between acceleration and deceleration as it nears the ego vehicle.
+   LLM-G: The ego vehicle is at an intersection attempting an unprotected left turn.
+      -> G13: The ego vehicle starts an unprotected left turn at an four-way intersection.
+   LLM-S: The adversarial car is oncoming from the opposite direction as the ego vehicle begins its left turn.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! B PART (retrieval): unexpected acceleration -> alternating acceleration/deceleration
+   !! S SIDE (retrieval): oncoming car -> left-front adjacent lane
+   !! S ADDED (retrieval): slow leading car added
+## 26 [Car] The ego attempts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car's suddenly brakes, necessitating the ego to rapidly reassess the situation and adjust its turn.
+   LLM-B: The oncoming adversarial car suddenly brakes.
+      -> B25: The adversarial vehicle brakes suddenly and, after a brief pause, accelerates aggressively.
+   LLM-G: The ego vehicle is attempting an unprotected left turn at an intersection.
+      -> G13: The ego vehicle starts an unprotected left turn at an four-way intersection.
+   LLM-S: The adversarial car is approaching from the opposite direction, directly in front of the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! B PART (retrieval): brakes -> brakes then accelerates aggressively
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 27 [Car] The ego commences an unprotected left turn at an intersection while yielding to an oncoming car when the adversarial car, comes from the right, blocks multiple lanes by driving extremely slowly, forcing the ego vehicle to change lanes.
+   LLM-B: The adversarial car drives extremely slowly, blocking multiple lanes and forcing the ego vehicle to change lanes.
+      -> B51: The adversarial vehicle approaches the intersection normally but begins to drives extremely slowly as it nears the ego vehicle.
+   LLM-G: An intersection where the ego vehicle is attempting an unprotected left turn.
+      -> G13: The ego vehicle starts an unprotected left turn at an four-way intersection.
+   LLM-S: The adversarial car comes from the right side of the intersection.
+      -> S33: The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.
+   !! S SIDE (retrieval): from the right -> oncoming side
+## 28 [Car] The ego vehicle is making an unprotected left turn; the adversarial vehicle approaches the intersection at a normal speed but then suddenly attempts to make a last-second right turn.
+   LLM-B: The adversarial car approaches the intersection at a normal speed but then suddenly attempts to make a last-second right turn.
+      -> B47: The adversarial vehicle approaches the intersection at normal speed and suddenly makes a last-second right turn.
+   LLM-G: The ego vehicle is making an unprotected left turn at an intersection.
+      -> G13: The ego vehicle starts an unprotected left turn at an four-way intersection.
+   LLM-S: The adversarial car approaches from the opposite direction of the ego vehicle at the intersection.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 29 [Car] The ego attempts an unprotected left turn at an intersection while yielding to an oncoming car when the oncoming car veer erratically.
+   LLM-B: The adversarial car veers erratically.
+      -> B26: The adversarial vehicle steers erratically, alternating sudden lane changes to the left and right.
+   LLM-G: The ego vehicle is at an intersection attempting an unprotected left turn.
+      -> G13: The ego vehicle starts an unprotected left turn at an four-way intersection.
+   LLM-S: The adversarial car is oncoming from the opposite direction of the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 30 [Car] The ego is performing a right turn at an intersection when the crossing car suddenly speeds up, entering the intersection and causing the ego to brake abruptly to avoid a collision.
+   LLM-B: The adversarial car suddenly speeds up, entering the intersection and causing the ego to brake abruptly.
+      -> B44: The adversarial vehicle crosses the intersection, and abruptly accelerates as it approaches the ego's trajectory.
+   LLM-G: The ego vehicle is performing a right turn at a four-way intersection.
+      -> G4: The ego vehicle navigates a right turn at a four-way intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is crossing the intersection from the left.
+      -> S30: The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.
+   !! S SIDE (retrieval): crossing from the left -> oncoming side
+## 31 [Car] The ego vehicle is turning right; the adversarial car (positioned ahead on the right) blocks the lane by braking suddenly.
+   LLM-B: The adversarial car suddenly brakes, blocking the lane.
+      -> B24: The adversarial vehicle initially follows the lane at a set speed and then suddenly brakes.
+   LLM-G: The ego vehicle is turning right.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is positioned ahead on the right of the ego vehicle.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! S ADDED (retrieval): slow leading car added
+## 32 [Car] The ego vehicle is turning right; the adversarial vehicle enters the intersection from the left side, swerving to the right suddenly.
+   LLM-B: The adversarial car enters the intersection from the left and swerves to the right suddenly.
+      -> B47: The adversarial vehicle approaches the intersection at normal speed and suddenly makes a last-second right turn.
+   LLM-G: The ego vehicle is turning right at an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial car enters the intersection from the left side.
+      -> S30: The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.
+   !! S SIDE (retrieval): enters from the left -> oncoming side
+## 33 [Car] The ego vehicle is turning right; the adversarial car (positioned ahead on the right) reverses abruptly.
+   LLM-B: The adversarial car reverses abruptly.
+      -> B21: The adversarial vehicle abruptly stops after a lane change.
+   LLM-G: The ego vehicle is turning right.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is positioned ahead on the right of the ego vehicle.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! B BEHAV (retrieval): reverses abruptly -> stops after a lane change (reversal entry B53 exists)
+   !! S ADDED (retrieval): slow leading car added
+## 34 [Car] The ego vehicle is turning right; the adversarial car (positioned behind on the right) suddenly accelerates and then decelerates.
+   LLM-B: The adversarial car suddenly accelerates and then decelerates.
+      -> B36: The adversarial car suddenly alternates between acceleration and deceleration as it nears the ego vehicle.
+   LLM-G: The ego vehicle is turning right.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is positioned behind on the right of the ego vehicle.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! S LONG (retrieval): behind on the right -> right front
+   !! S ADDED (retrieval): slow leading car added
+## 35 [Car] The ego vehicle is approaching the intersection; the adversarial car (on the left) suddenly accelerates and enters the intersection first and suddenly stop.
+   LLM-B: The adversarial car suddenly accelerates to enter the intersection first and then suddenly stops.
+      -> B54: The adversarial vehicle approaches the intersection normally but suddenly accelerates and then abruptly decelerates
+   LLM-G: The ego vehicle is approaching a four-way intersection.
+      -> G2: The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is on the left of the ego vehicle, approaching the intersection.
+      -> S21: The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.
+   !! S ADDED (retrieval): slow leading car added
+## 36 [Car] The ego vehicle is approaching the intersection; the adversarial car (on the right) suddenly accelerates and enters the intersection first and suddenly stop.
+   LLM-B: The adversarial car suddenly accelerates to enter the intersection first and then suddenly stops.
+      -> B54: The adversarial vehicle approaches the intersection normally but suddenly accelerates and then abruptly decelerates
+   LLM-G: The ego vehicle is approaching a four-way intersection.
+      -> G2: The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.
+   LLM-S: The adversarial car is on the right of the ego vehicle, approaching the intersection.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! S ADDED (retrieval): slow leading car added
+## 37 [Car] The ego vehicle is maintaining a constant speed; the adversarial car, comes from the right, blocks multiple lanes by driving extremely slowly, forcing the ego vehicle to change lanes.
+   LLM-B: The adversarial car drives extremely slowly, blocking multiple lanes and forcing the ego vehicle to change lanes.
+      -> B51: The adversarial vehicle approaches the intersection normally but begins to drives extremely slowly as it nears the ego vehicle.
+   LLM-G: A multi-lane road.
+      -> G10: The ego vehicle is positioned on a two-lane road with traffic flowing in opposite directions.
+   LLM-S: The adversarial car comes from the right side of the ego vehicle.
+      -> S20: The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.
+   !! G CTX (retrieval): multi-lane road -> opposite-direction two-lane road
+   !! S ADDED (retrieval): slow leading car added
+## 38 [Car] The ego vehicle is entering the intersection; the adversarial vehicle comes from the opposite direction and turns left and stop, causing a near collision with the ego vehicle.
+   LLM-B: The adversarial car turns left and stops, causing a near collision with the ego vehicle.
+      -> B36: The adversarial car suddenly alternates between acceleration and deceleration as it nears the ego vehicle.
+   LLM-G: The ego vehicle is entering a four-way intersection.
+      -> G2: The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.
+   LLM-S: The adversarial car comes from the opposite direction of the ego vehicle.
+      -> S24: Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.
+   !! B BEHAV (retrieval): turns left and stops -> alternating acceleration (left-turn-and-stop entry B48 exists)
+   !! S ADDED (retrieval): parked car blocking ego lane added
+## 39 [Car] The ego vehicle is entering the intersection; the adversarial vehicle comes from the right and turns left and stop, causing a near collision with the ego vehicle.
+   LLM-B: The adversarial car comes from the right, turns left, and stops, causing a near collision with the ego vehicle.
+      -> B36: The adversarial car suddenly alternates between acceleration and deceleration as it nears the ego vehicle.
+   LLM-G: The ego vehicle is entering an intersection.
+      -> G1: The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.
+   LLM-S: The adversarial car approaches from the right side of the intersection.
+      -> S33: The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.
+   !! B BEHAV (retrieval): turns left and stops -> alternating acceleration (B48 exists)
+   !! S SIDE (retrieval): from the right -> oncoming side
+   !! S TURN (retrieval): turns left -> turns right

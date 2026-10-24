@@ -1,0 +1,82 @@
+[
+ {
+  "spawn": 1,
+  "description": "Adversarial agent spawns from the left front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   1.84,
+   7.76
+  ],
+  "faces_left": 0.0
+ },
+ {
+  "spawn": 2,
+  "description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   2.37,
+   8.1
+  ],
+  "faces_left": 0.0
+ },
+ {
+  "spawn": 6,
+  "description": "Adversarial agent spawns from behind a bus stop on the right front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   3.09,
+   11.04
+  ],
+  "faces_left": 1.0
+ },
+ {
+  "spawn": 7,
+  "description": "Adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 0.925,
+  "lateral_m": [
+   -1.6,
+   7.46
+  ],
+  "faces_left": 0.0
+ },
+ {
+  "spawn": 8,
+  "description": "Adversarial agent spawns from behind a vending machine on the right front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   1.68,
+   10.02
+  ],
+  "faces_left": 1.0
+ },
+ {
+  "spawn": 9,
+  "description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   0.33,
+   7.64
+  ],
+  "faces_left": 0.0
+ },
+ {
+  "spawn": 10,
+  "description": "Adversarial agent spawns from behind a parked car on the right front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   2.07,
+   10.18
+  ],
+  "faces_left": 1.0
+ },
+ {
+  "spawn": 11,
+  "description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+  "share_right_of_road_point": 1.0,
+  "lateral_m": [
+   0.17,
+   8.67
+  ],
+  "faces_left": 0.0
+ }
+]

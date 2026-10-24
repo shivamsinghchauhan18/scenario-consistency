@@ -1,0 +1,2317 @@
+{
+ "summary": {
+  "n_queries": 124,
+  "n_specs": 31,
+  "top1_accuracy_vs_description": 0.6532258064516129,
+  "top1_accuracy_vs_code": 0.6290322580645161,
+  "by_db": {
+   "spawn": {
+    "n": 108,
+    "acc_desc": 0.6111111111111112,
+    "acc_code": 0.5925925925925926
+   },
+   "geometry": {
+    "n": 16,
+    "acc_desc": 0.9375,
+    "acc_code": 0.875
+   }
+  },
+  "by_group": {
+   "adj_lane": 0.7083333333333334,
+   "cross_straight": 0.5625,
+   "diag_rear": 0.5,
+   "intersection": 0.6944444444444444,
+   "turn": 0.9375,
+   "zebra_front": 0.25
+  },
+  "paraphrase_pair_agreement": 0.45161290322580644,
+  "specs_all_phrasings_agree": 0.1935483870967742,
+  "flips": {
+   "geometry:junction": {
+    "n": 16,
+    "unchanged": 2,
+    "wrong": 1,
+    "unchanged_rate": 0.125,
+    "wrong_rate": 0.0625
+   },
+   "geometry:turn": {
+    "n": 16,
+    "unchanged": 0,
+    "wrong": 1,
+    "unchanged_rate": 0.0,
+    "wrong_rate": 0.0625
+   },
+   "spawn:blocker": {
+    "n": 24,
+    "unchanged": 1,
+    "wrong": 11,
+    "unchanged_rate": 0.041666666666666664,
+    "wrong_rate": 0.4583333333333333
+   },
+   "spawn:long": {
+    "n": 16,
+    "unchanged": 4,
+    "wrong": 3,
+    "unchanged_rate": 0.25,
+    "wrong_rate": 0.1875
+   },
+   "spawn:side": {
+    "n": 96,
+    "unchanged": 30,
+    "wrong": 38,
+    "unchanged_rate": 0.3125,
+    "wrong_rate": 0.3958333333333333
+   },
+   "spawn:turn": {
+    "n": 24,
+    "unchanged": 0,
+    "wrong": 7,
+    "unchanged_rate": 0.0,
+    "wrong_rate": 0.2916666666666667
+   }
+  },
+  "ties": 1
+ },
+ "rows": [
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns on the left front of the ego vehicle on a straight road and crosses.",
+   "top1": 1,
+   "top1_description": "Adversarial agent spawns from the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9733455181121826,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its left side and then crosses the straight road.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.8948134183883667,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.004487872123718262,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the left to cross the road.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9081083536148071,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.003286421298980713,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned at the left-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 1,
+   "top1_description": "Adversarial agent spawns from the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.935373067855835,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on a straight road and crosses.",
+   "top1": 7,
+   "top1_description": "Adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.978400707244873,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its left side, hidden behind a bus stop, and then crosses the straight road.",
+   "top1": 11,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9037582874298096,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.003907680511474609,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the left behind a bus stop to cross the road.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9065330028533936,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.017093420028686523,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a bus stop at the left-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 7,
+   "top1_description": "Adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9216128587722778,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on a straight road and crosses.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.980507493019104,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its left side, hidden behind a vending machine, and then crosses the straight road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9139951467514038,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the left behind a vending machine to cross the road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9143964052200317,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a vending machine at the left-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9339807033538818,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a parked car on the left front of the ego vehicle on a straight road and crosses.",
+   "top1": 11,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9811269044876099,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its left side, hidden behind a parked car, and then crosses the straight road.",
+   "top1": 11,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9125882387161255,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the left behind a parked car to cross the road.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.9160642623901367,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.026655256748199463,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a parked car at the left-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 11,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9278421401977539,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns on the right front of the ego vehicle on a straight road and crosses.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9760331511497498,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its right side and then crosses the straight road.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.8940249681472778,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.004569113254547119,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the right to cross the road.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9154719114303589,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "none",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned at the right-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9361169338226318,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a bus stop on the right front of the ego vehicle on a straight road and crosses.",
+   "top1": 6,
+   "top1_description": "Adversarial agent spawns from behind a bus stop on the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.976516842842102,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its right side, hidden behind a bus stop, and then crosses the straight road.",
+   "top1": 10,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9026587009429932,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.004639744758605957,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the right behind a bus stop to cross the road.",
+   "top1": 2,
+   "top1_description": "Adversarial agent spawns from the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9095865488052368,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.01475381851196289,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "bus stop",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a bus stop at the right-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 7,
+   "top1_description": "Adversarial agent spawns from behind a bus stop on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9199349284172058,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.001216113567352295,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a vending machine on the right front of the ego vehicle on a straight road and crosses.",
+   "top1": 8,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9778684973716736,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its right side, hidden behind a vending machine, and then crosses the straight road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9105161428451538,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.003654003143310547,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the right behind a vending machine to cross the road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9167171120643616,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0002129673957824707,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "vending machine",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a vending machine at the right-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 9,
+   "top1_description": "Adversarial agent spawns from behind a vending machine on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9307880401611328,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0005265474319458008,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns from behind a parked car on the right front of the ego vehicle on a straight road and crosses.",
+   "top1": 10,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9790239334106445,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary starts ahead of the ego car on its right side, hidden behind a parked car, and then crosses the straight road.",
+   "top1": 11,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the left front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9116067886352539,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 6.437301635742188e-05,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "On a straight road, an adversarial road user appears in front of the ego vehicle to the right behind a parked car to cross the road.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.9208076000213623,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.026136577129364014,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "blocker": "parked car",
+    "group": "cross_straight",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is positioned concealed by a parked car at the right-hand side ahead of the ego vehicle and walks across the straight road.",
+   "top1": 10,
+   "top1_description": "Adversarial agent spawns from behind a parked car on the right front of the ego vehicle on the same straight road for crossing.",
+   "top1_score": 0.9276795387268066,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns on the left front of the ego vehicle on the zebra crossing at the end of the ego's lane.",
+   "top1": 13,
+   "top1_description": "Adversarial agent spawns on the left front of the ego vehicle at the end of the ego's initial lane (i.e., on the front zebra crossing) for crossing.",
+   "top1_score": 0.9857316613197327,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary waits at the left end of the crosswalk in front of the ego vehicle and then crosses.",
+   "top1": 30,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.",
+   "top1_score": 0.8764725923538208,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.00725245475769043,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "At the pedestrian crossing ahead of the ego car, an adversarial road user starts from the left side.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.8967284560203552,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.01818186044692993,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent begins on the left-hand side of the zebra crossing directly ahead of the ego vehicle.",
+   "top1": 15,
+   "top1_description": "Adversarial agent spawns from the left side of the ego vehicle's end lane's start point  (i.e., zebra crossing on the side) for crossing.",
+   "top1_score": 0.9231682419776917,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.013645172119140625,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns on the right front of the ego vehicle on the zebra crossing at the end of the ego's lane.",
+   "top1": 12,
+   "top1_description": "Adversarial agent spawns on the right front of the ego vehicle at the end of the ego's initial lane (i.e., on the front zebra crossing) for crossing.",
+   "top1_score": 0.9864915013313293,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary waits at the right end of the crosswalk in front of the ego vehicle and then crosses.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.8815790414810181,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.014137089252471924,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "At the pedestrian crossing ahead of the ego car, an adversarial road user starts from the right side.",
+   "top1": 22,
+   "top1_description": "Adversarial agent crosses the road from the right front with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.896105170249939,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.021596252918243408,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "zebra_front",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent begins on the right-hand side of the zebra crossing directly ahead of the ego vehicle.",
+   "top1": 14,
+   "top1_description": "Adversarial agent spawns from the right side of the ego vehicle's end lane's start point  (i.e., zebra crossing on the side) for crossing.",
+   "top1_score": 0.9216123819351196,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.011347949504852295,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the front left relative to the ego vehicle and drives straight.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9920457005500793,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary drives in the left adjacent lane, ahead of the ego car, and keeps going straight.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8828011751174927,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "In the lane to the left of the ego vehicle, an adversarial road user starts in front of the ego and drives straight.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8970465660095215,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed ahead the ego vehicle in its left-hand neighbouring lane, driving straight.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9086866974830627,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the front left relative to the ego vehicle and drives straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.961672306060791,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.008997678756713867,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary drives in the left adjacent lane, ahead of the ego car, and keeps going straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.8955610990524292,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "In the lane to the left of the ego vehicle, an adversarial road user starts in front of the ego and drives straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.9059790968894958,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed ahead the ego vehicle in its left-hand neighbouring lane, driving straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.9283666014671326,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the rear left relative to the ego vehicle and drives straight.",
+   "top1": 18,
+   "top1_description": "The adversarial agent spawns in the rear left relative to the ego vehicle and drives straight.",
+   "top1_score": 1.0,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary drives in the left adjacent lane, behind the ego car, and keeps going straight.",
+   "top1": 18,
+   "top1_description": "The adversarial agent spawns in the rear left relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8913111686706543,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "In the lane to the left of the ego vehicle, an adversarial road user starts behind the ego and drives straight.",
+   "top1": 17,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8981830477714539,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.01263350248336792,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed behind the ego vehicle in its left-hand neighbouring lane, driving straight.",
+   "top1": 18,
+   "top1_description": "The adversarial agent spawns in the rear left relative to the ego vehicle and drives straight.",
+   "top1_score": 0.922187328338623,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the front right relative to the ego vehicle and drives straight.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.992685079574585,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary drives in the right adjacent lane, ahead of the ego car, and keeps going straight.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8841243982315063,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "In the lane to the right of the ego vehicle, an adversarial road user starts in front of the ego and drives straight.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9006766080856323,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed ahead the ego vehicle in its right-hand neighbouring lane, driving straight.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.89986252784729,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the front right relative to the ego vehicle and drives straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9571422934532166,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.005840718746185303,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary drives in the right adjacent lane, ahead of the ego car, and keeps going straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.8954806923866272,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0020577311515808105,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "In the lane to the right of the ego vehicle, an adversarial road user starts in front of the ego and drives straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 20,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.",
+   "top1_score": 0.9090917110443115,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "yes",
+    "long": "front",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed ahead the ego vehicle in its right-hand neighbouring lane, driving straight. A slow car drives ahead of the ego vehicle.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.9247101545333862,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.004277944564819336,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns in the rear right relative to the ego vehicle and drives straight.",
+   "top1": 19,
+   "top1_description": "The adversarial agent spawns in the rear right relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9999998211860657,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": false,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary drives in the right adjacent lane, behind the ego car, and keeps going straight.",
+   "top1": 19,
+   "top1_description": "The adversarial agent spawns in the rear right relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8945612907409668,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": false,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "In the lane to the right of the ego vehicle, an adversarial road user starts behind the ego and drives straight.",
+   "top1": 16,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle and drives straight.",
+   "top1_score": 0.8998516201972961,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.008482754230499268,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "adj_lane",
+    "leading": "no",
+    "long": "rear",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed behind the ego vehicle in its right-hand neighbouring lane, driving straight.",
+   "top1": 18,
+   "top1_description": "The adversarial agent spawns in the rear left relative to the ego vehicle and drives straight.",
+   "top1_score": 0.9167335033416748,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0010497570037841797,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "straight"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the left side of a four-way intersection and drives straight.",
+   "top1": 26,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection  and drives straight.",
+   "top1_score": 0.99106764793396,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "straight"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the left direction and goes straight through.",
+   "top1": 26,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection  and drives straight.",
+   "top1_score": 0.8789456486701965,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "straight"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the left-hand side and continues straight.",
+   "top1": 30,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.",
+   "top1_score": 0.9125267863273621,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.01570582389831543,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "straight"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the left side and drives straight on.",
+   "top1": 26,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection  and drives straight.",
+   "top1_score": 0.9147039651870728,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the left side of a four-way intersection and turns left.",
+   "top1": 29,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns left.",
+   "top1_score": 0.9901189804077148,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "left"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the left direction and makes a left turn.",
+   "top1": 29,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns left.",
+   "top1_score": 0.9216504693031311,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "left"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the left-hand side and turns to the left.",
+   "top1": 29,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns left.",
+   "top1_score": 0.9411362409591675,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the left side and takes a left turn.",
+   "top1": 28,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns left.",
+   "top1_score": 0.9184318780899048,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0015529394149780273,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the left side of a four-way intersection and turns right.",
+   "top1": 32,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns right.",
+   "top1_score": 0.990430474281311,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "right"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the left direction and makes a right turn.",
+   "top1": 32,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns right.",
+   "top1_score": 0.9301130771636963,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "right"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the left-hand side and turns to the right.",
+   "top1": 32,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns right.",
+   "top1_score": 0.9434679746627808,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "left",
+    "turn": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the left side and takes a right turn.",
+   "top1": 32,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns right.",
+   "top1_score": 0.9163123965263367,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "straight"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the right side of a four-way intersection and drives straight.",
+   "top1": 25,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and drives straight.",
+   "top1_score": 0.9887741804122925,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "straight"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the right direction and goes straight through.",
+   "top1": 27,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and  drives straight.",
+   "top1_score": 0.8866628408432007,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0018908977508544922,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "straight"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the right-hand side and continues straight.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9160712957382202,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.02744060754776001,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "straight"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the right side and drives straight on.",
+   "top1": 25,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and drives straight.",
+   "top1_score": 0.9195982813835144,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the right side of a four-way intersection and turns left.",
+   "top1": 28,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns left.",
+   "top1_score": 0.9909175038337708,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "left"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the right direction and makes a left turn.",
+   "top1": 28,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns left.",
+   "top1_score": 0.9255517721176147,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "left"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the right-hand side and turns to the left.",
+   "top1": 32,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns right.",
+   "top1_score": 0.9377009868621826,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.001036524772644043,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the right side and takes a left turn.",
+   "top1": 28,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns left.",
+   "top1_score": 0.9168265461921692,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the right side of a four-way intersection and turns right.",
+   "top1": 31,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns right.",
+   "top1_score": 0.9891254305839539,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "right"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the right direction and makes a right turn.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9226137399673462,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0005797147750854492,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "right"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the right-hand side and turns to the right.",
+   "top1": 31,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns right.",
+   "top1_score": 0.9405457973480225,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "right",
+    "turn": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the right side and takes a right turn.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9173569083213806,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0036559104919433594,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "straight"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the oncoming side of a four-way intersection and drives straight.",
+   "top1": 27,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and  drives straight.",
+   "top1_score": 0.9893001914024353,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "straight"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the opposite direction and goes straight through.",
+   "top1": 27,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and  drives straight.",
+   "top1_score": 0.8790450096130371,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "straight"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the oncoming side and continues straight.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9091827273368835,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.011058032512664795,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "straight"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the opposite side and drives straight on.",
+   "top1": 27,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and  drives straight.",
+   "top1_score": 0.9126791954040527,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the oncoming side of a four-way intersection and turns left.",
+   "top1": 30,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.",
+   "top1_score": 0.9888201951980591,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "left"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the opposite direction and makes a left turn.",
+   "top1": 29,
+   "top1_description": "The adversarial agent crosses from the left side of a four-way intersection and turns left.",
+   "top1_score": 0.9257668852806091,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.002347290515899658,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "left"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the oncoming side and turns to the left.",
+   "top1": 30,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns left.",
+   "top1_score": 0.9401906132698059,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the opposite side and takes a left turn.",
+   "top1": 28,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns left.",
+   "top1_score": 0.9222952723503113,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.001098036766052246,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent comes from the oncoming side of a four-way intersection and turns right.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9879070520401001,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "right"
+   },
+   "template": 1,
+   "text": "The adversary enters the four-way junction from the opposite direction and makes a right turn.",
+   "top1": 31,
+   "top1_description": "The adversarial agent crosses from the right side of a four-way intersection and turns right.",
+   "top1_score": 0.9275214672088623,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.0015037059783935547,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "right"
+   },
+   "template": 2,
+   "text": "At a four-way intersection, an adversarial road user approaches from the oncoming side and turns to the right.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.939551591873169,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "intersection",
+    "side": "oncoming",
+    "turn": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent arrives at the crossroads from the opposite side and takes a right turn.",
+   "top1": 33,
+   "top1_description": "The adversarial agent crosses from the oncoming side of a four-way intersection and turns right.",
+   "top1_score": 0.9233803749084473,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "left"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns diagonally left behind the ego vehicle.",
+   "top1": 4,
+   "top1_description": "Adversarial agent spawns diagonally left behind the ego vehicle for crossing.",
+   "top1_score": 0.9719046354293823,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "left"
+   },
+   "template": 1,
+   "text": "The adversary starts behind the ego car, offset to its left.",
+   "top1": 21,
+   "top1_description": "The adversarial agent spawns in the left front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt to the left.",
+   "top1_score": 0.906174898147583,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.025481700897216797,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "left"
+   },
+   "template": 2,
+   "text": "Behind the ego vehicle and to the left, an adversarial road user appears.",
+   "top1": 24,
+   "top1_description": "Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.8966126441955566,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.03391003608703613,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "left"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed at the left rear of the ego vehicle, diagonally behind it.",
+   "top1": 4,
+   "top1_description": "Adversarial agent spawns diagonally left behind the ego vehicle for crossing.",
+   "top1_score": 0.9251595735549927,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "right"
+   },
+   "template": 0,
+   "text": "The adversarial agent spawns diagonally right behind the ego vehicle.",
+   "top1": 5,
+   "top1_description": "Adversarial agent spawns diagonally right behind the ego vehicle for crossing.",
+   "top1_score": 0.9753769636154175,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "right"
+   },
+   "template": 1,
+   "text": "The adversary starts behind the ego car, offset to its right.",
+   "top1": 20,
+   "top1_description": "The adversarial agent spawns in the right front relative to the ego vehicle, which is driving forward. A slow-moving car is strategically placed in front of the ego vehicle to provoke a lane change attempt.",
+   "top1_score": 0.9042584896087646,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.03579246997833252,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "right"
+   },
+   "template": 2,
+   "text": "Behind the ego vehicle and to the right, an adversarial road user appears.",
+   "top1": 24,
+   "top1_description": "Adversarial agent comes from the near opposite oncoming lane with a parked car blocking the ego vehicle's lane.",
+   "top1_score": 0.894511342048645,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.03581678867340088,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "spawn",
+   "attrs": {
+    "group": "diag_rear",
+    "side": "right"
+   },
+   "template": 3,
+   "text": "The attacking agent is placed at the right rear of the ego vehicle, diagonally behind it.",
+   "top1": 5,
+   "top1_description": "Adversarial agent spawns diagonally right behind the ego vehicle for crossing.",
+   "top1_score": 0.9107255935668945,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "left"
+   },
+   "template": 0,
+   "text": "The ego vehicle makes a left turn at a four-way intersection.",
+   "top1": 2,
+   "top1_description": "The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.976773202419281,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "left"
+   },
+   "template": 1,
+   "text": "The ego car turns left at a 4-way junction.",
+   "top1": 2,
+   "top1_description": "The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9484508037567139,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "left"
+   },
+   "template": 2,
+   "text": "At a crossroads with four arms, the ego vehicle performs a left turn.",
+   "top1": 2,
+   "top1_description": "The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9443197250366211,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "left"
+   },
+   "template": 3,
+   "text": "The ego vehicle is turning left through a four-way crossing.",
+   "top1": 2,
+   "top1_description": "The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9611419439315796,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "left"
+   },
+   "template": 0,
+   "text": "The ego vehicle makes a left turn at a three-way intersection.",
+   "top1": 3,
+   "top1_description": "The ego vehicle navigates a left turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9778432846069336,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "left"
+   },
+   "template": 1,
+   "text": "The ego car turns left at a T-junction.",
+   "top1": 2,
+   "top1_description": "The ego vehicle navigates a left turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9092044830322266,
+   "tie": false,
+   "desc_correct": false,
+   "code_correct": false,
+   "margin": 0.016135096549987793,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "left"
+   },
+   "template": 2,
+   "text": "At a junction with three arms, the ego vehicle performs a left turn.",
+   "top1": 3,
+   "top1_description": "The ego vehicle navigates a left turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9335070848464966,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "left"
+   },
+   "template": 3,
+   "text": "The ego vehicle is turning left through a three-way crossing.",
+   "top1": 3,
+   "top1_description": "The ego vehicle navigates a left turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9616000652313232,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 1
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "right"
+   },
+   "template": 0,
+   "text": "The ego vehicle makes a right turn at a four-way intersection.",
+   "top1": 4,
+   "top1_description": "The ego vehicle navigates a right turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9779870510101318,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "right"
+   },
+   "template": 1,
+   "text": "The ego car turns right at a 4-way junction.",
+   "top1": 4,
+   "top1_description": "The ego vehicle navigates a right turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9419645071029663,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "right"
+   },
+   "template": 2,
+   "text": "At a crossroads with four arms, the ego vehicle performs a right turn.",
+   "top1": 4,
+   "top1_description": "The ego vehicle navigates a right turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9543877840042114,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "4way",
+    "turn": "right"
+   },
+   "template": 3,
+   "text": "The ego vehicle is turning right through a four-way crossing.",
+   "top1": 4,
+   "top1_description": "The ego vehicle navigates a right turn at a four-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9588898420333862,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "right"
+   },
+   "template": 0,
+   "text": "The ego vehicle makes a right turn at a three-way intersection.",
+   "top1": 5,
+   "top1_description": "The ego vehicle navigates a right turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9790182709693909,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "right"
+   },
+   "template": 1,
+   "text": "The ego car turns right at a T-junction.",
+   "top1": 0,
+   "top1_description": "The ego vehicle navigates a right turn at an intersection, following a specific maneuver path.",
+   "top1_score": 0.9084586501121521,
+   "tie": true,
+   "desc_correct": true,
+   "code_correct": false,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "right"
+   },
+   "template": 2,
+   "text": "At a junction with three arms, the ego vehicle performs a right turn.",
+   "top1": 5,
+   "top1_description": "The ego vehicle navigates a right turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9411029815673828,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  },
+  {
+   "db": "geometry",
+   "attrs": {
+    "group": "turn",
+    "junction": "3way",
+    "turn": "right"
+   },
+   "template": 3,
+   "text": "The ego vehicle is turning right through a three-way crossing.",
+   "top1": 5,
+   "top1_description": "The ego vehicle navigates a right turn at a three-way intersection, following a specific maneuver path.",
+   "top1_score": 0.9617458581924438,
+   "tie": false,
+   "desc_correct": true,
+   "code_correct": true,
+   "margin": 0.0,
+   "n_correct_entries": 3
+  }
+ ]
+}

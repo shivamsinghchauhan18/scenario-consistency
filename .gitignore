@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+execcheck/Town03.xodr
+execcheck/spawn*.scenic
